@@ -22,7 +22,7 @@ Servo = GPIO.PWM(servo,50)
 Servo.start(0)
 
 def lineNotify(message, *args):
-    APIとトークンを入力
+    #APIとトークンを入力
     line_notify_api = ''
     line_notify_token = ''
     payload = {'message': message}
