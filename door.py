@@ -40,9 +40,6 @@ def servo_angle(angle):
     Servo.ChangeDutyCycle(duty)
     time.sleep(0.3)
     
-def servo(ang):
-    servo_angle(ang)
-
 try:
     while True:
         lcd.message('　　 ボタンヲオシテクダサイ',2)
@@ -51,7 +48,7 @@ try:
             camera.camera()
             lcd.message('        OPEN  ',3)
             lcd.message('　　　                   ',2)
-            servo(-90)
+            servo_angle(-90)
             second = 10
             for num in range(10):
                 second -= 1
@@ -61,7 +58,7 @@ try:
         else:
             lcd.message('       CLOSE ',3)
             lcd.message('                           ',4)
-            servo(90)
+            servo_angle(90)
         
 except keyboardInterrupt:
     Sarvo.stop()
